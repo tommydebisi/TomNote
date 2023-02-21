@@ -4,7 +4,7 @@
 """
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_cors import CORS
-from models.engine.auth import Auth
+from auth.auth import Auth
 from models.user import User
 import models
 
