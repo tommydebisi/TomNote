@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>TomNote</title>
+</head>
+<body>
+    <nav>
+        <div class="top-txt">
+            <h3>TOM NOTE</h3>
+        </div>
+
+        <div class="left-txts">
+            <ul class="left-ord">
+                <li>
+                    {{ user.email }}
+                </li>
+                <li>
+                    <a href="{{ url_for('logout') }}">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="inner-note-left">
+            <div class="note-list right">
+                <div class="notes-left-deep">
+                    <h3>Notes</h3>
+                    <ul class="note-ord">
+                        {% for note in notes %}
+                        <li>
+                            {{ note.title }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-note-mid">
+            <div class="note-wrap">
+                <div class="note-add">
+                    <h3>Add Note</h3>
+                </div>
+                <form action="{{ url_for('home') }}" method="post">
+                    <div class="inner-form">
+                        <label for="title">Title:</label>
+                        {% if update %}
+                        <input type="text" name="title" id="title" value="{{ title }}" placeholder="Enter A title" required>
+
+                        <label for="content">content:</label>
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="Input message">{{ content }}</textarea>
+                        {% else %}
+                        <input type="text" name="title" id="title" placeholder="Enter A title" required>
+
+                        <label for="content">content:</label>
+                        <textarea name="content" id="content" cols="30" rows="10" placeholder="Input message"></textarea>
+                        {% endif %}
+                        <input type="submit" value="Save Note">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="inner-note-right note-list">
+            <div class="display-notes">
+                <ul>
+                    {% for note in notes %}
+                    <li>
+                        <div class="space">
+                            <h3 class="margin-bot">{{ note.title }}</h3>
+                            <p class="margin-bot">{{ note.content }}</p>
+                            <small class="margin-bot">{{ note.updated_at }}</small>
+                        </div>
+                        <div class="delete">
+                            <a href="{{ url_for('delete', note_id=note.id) }}">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </a>
+                            <a href="{{ url_for('update', note_id=note.id) }}">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

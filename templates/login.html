@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>TomNote Login</title>
+</head>
+<body>
+    <main class="card-wrap">
+        <div class="wrapper">
+            <div class="card">
+                {% if success %}
+                    <p class="created-acc">
+                        Account Created! You can now login.
+                    </p>
+                {% endif %}
+
+                <h2 class="big-tx">Welcome Back!</h2>
+                <form action="/login" method="post">
+                    <div class="inner-form">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your Password" required>
+                        <button type="submit">Login</button>
+                        {% if error %}
+                            <p class="error">{{ error }}</p>
+                        {% endif %}
+                    </div>
+                </form>
+                <p>
+                    Don't have an account?
+                    <a href="{{ url_for('register') }}">
+                    Register here
+                    </a>
+                </p>
+            </div>
+
+            <div class="card-right">
+                <div class="right-txt">
+                    <h3>TomNote</h3>
+                    <p>
+                        A simple notebook app that allows you to create, edit, and delete notes.
+                    </p>
+                    <img src="/images/undraw_Personal_notebook_re_d7dc.png"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

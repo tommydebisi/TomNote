@@ -1,0 +1,239 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+nav {
+	background-color: #203A43;
+	color: #fff;
+	display: flex;
+	padding: 1rem;
+    min-height: 5vh;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+.left-txts {
+    width: 20%;
+    margin-left: auto;
+}
+
+.left-ord {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.left-ord a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+.left-ord a:hover {
+    color: rgba(255,255,255,.6);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    width: 100%;
+}
+
+section form {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.inner-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.inner-form input {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    border: .5px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.inner-form input:focus {
+    border: 2px solid #0f2027;
+}
+
+.inner-form input[type="submit"] {
+    background-color: #203A43;
+    color: #fff;
+    border: none;
+    padding: .9rem 1rem;
+    font-size: .9rem;
+    margin-top: 1rem;
+    width: 80%;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.inner-form input[type="submit"]:hover {
+    background-color: #0f2027;
+}
+
+.inner-form label {
+    font-weight: bold;
+    margin-right: auto;
+    text-transform: capitalize;
+    color: #0f2027;
+    font-weight: 500;
+}
+.inner-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 500;
+    outline: none;
+}
+
+.inner-form textarea:focus {
+    border: 2px solid #0f2027;
+}
+
+.hidden{
+    display: none;
+}
+
+/* All notes section */
+.inner-note-left {
+    width: 20%;
+    min-height: 95vh;
+    background-color: #2c5364;
+}
+.inner-note-right {
+    width: 40%;
+    min-height: 95vh;
+}
+.inner-note-mid {
+    width: 40%;
+    border-left: 1px solid #0f2027;
+    border-right:  1px solid #0f2027;
+    min-height: 95vh;
+}
+
+
+.note-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* notes right side */
+.note-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.note-add {
+    border-bottom: 1px solid #0f2027;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.note-add h3{
+    color: #0f2027;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.notes-left-deep {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #eee;
+}
+
+.notes-left-deep h3 {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #0f2027;
+    width: 100%;
+}
+
+.note-ord li {
+    margin-bottom: 1rem;
+    padding: 0 0 0 1rem;
+}
+
+/* Display notes */
+.display-notes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+
+.display-notes ul {
+    width: 100%;
+    padding-top: 1rem;
+}
+.display-notes ul li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #0f2027;
+    width: 100%;
+    padding-left: 1rem;
+    display: flex;
+}
+
+.space {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .8rem;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.delete {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.display-notes ul li:hover .delete {
+    opacity: 1;
+}
+
+.margin-bot {
+    margin-bottom: .6rem;
+    color: #2c5364;
+}

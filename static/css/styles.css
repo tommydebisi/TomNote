@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.card-wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(11, 36, 71, .6);
+    background-image: url(../images/Moonlit\ Asteroid.png);
+}
+
+.wrapper {
+    width: 60%;
+    display: flex;
+    align-items: stretch;
+}
+
+.card {
+    background-color: white;
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+    padding: 3rem;
+}
+
+.card .created-acc {
+    text-align: center;
+    color: rgb(23, 190, 23);
+    font-size: .8rem;
+}
+
+.big-tx {
+    text-align: center;
+    color: #0F2027;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.card form {
+    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+}
+
+.card p {
+    text-align: center;
+    font-size: .8rem;
+    color: #2c5364;
+}
+
+.card p a {
+    text-decoration: none;
+    color: #2c5364;
+    font-size: .8rem;
+}
+
+.card p a:hover {
+    opacity: .67;
+}
+
+.inner-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-form input {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #2c5364;
+}
+
+.inner-form input::placeholder {
+    color: #2c5364;
+    font-size: .8rem;
+}
+
+.inner-form input:focus {
+    border-bottom: 2px solid #0F2027;
+}
+
+
+.inner-form label {
+    margin-right: auto;
+    font-weight: 700;
+    color: #0F2027;
+}
+
+.inner-form button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0 .5rem 0;
+    border-radius: 5px;
+    background-color: #203A43;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    font-weight: 700;
+}
+
+.inner-form button[type="submit"]:hover {
+    background-color: #0F2027;
+    color: white;
+}
+
+.card-right {
+    background-color: white;
+    width: 50%;
+    border-radius: 0 10px 10px 0;
+    border-left: 1px solid #0F2027;
+    padding: 0 1rem 0 2rem;
+}
+
+.right-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.right-txt h3 {
+    color: #0F2027;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.right-txt p {
+    color: #203A43;
+    text-align: center;
+}
+
+.right-txt img {
+    height: 200px;
+    width: 270px;
+    margin-top: 2rem;
+}
+
+.card .error {
+    color: red;
+    font-size: .8rem;
+    text-align: center;
+}

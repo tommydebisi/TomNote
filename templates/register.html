@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>TomNote Register</title>
+</head>
+<body>
+    <main class="card-wrap">
+        <div class="wrapper">
+            <div class="card">
+                <h2 class="big-tx">Create an Account!</h2>
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="inner-form">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your Password" required>
+                        <button type="submit">Register</button>
+                        {% if user_error %}
+                        <p class="error">{{ user_error }}</p>
+                        {% endif %}
+                    </div>
+                </form>
+                <p>
+                    Already have an account?
+                    <a href="/">
+                        Login here
+                    </a>
+                </p>
+            </div>
+
+            <div class="card-right">
+                <div class="right-txt">
+                    <h3>TomNote</h3>
+                    <p>
+                        Start taking notes today! with TomNote.
+                    </p>
+                    <img src="/images/undraw_Personal_notebook_re_d7dc.png"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
