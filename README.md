@@ -5,8 +5,8 @@
 
 ## Usage
 
-**After registration of account and login, the user gets access to the dashboard where he can create a note**
-&&like this:**
+**After registration of account and login, the user gets access to the dashboard where he can create a note** <br>
+**like this:**
 ![creation](./img_rm/1.png)
 
 **And when the user clicks on save note, the note is saved and the user can see it in the dashboard**
