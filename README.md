@@ -30,7 +30,6 @@ note**
 - **make sure to start the mysql server**
 - **create a database to store the User and Notes**
 - **update the class DB in [DB.py](https://github.com/tommydebisi/TomNote/blob/main/models/engine/db.py) with the `host`, `database name`, `username` and `password`**
-![db](./img_rm/6.png) <br>
-**replace the variables with the `host`, `database name`, `username` and `password`**
+- **set environment variables `NOTE_USER`, `NOTE_PASSWORD`, `NOTE_HOST` and `NOTE_DB` to the `username`, `password`, `host` and `database name` respectively**
 - **run the app.py file**
-- **open the browser and go to http://**
+- **open the browser and go to `127.0.0.1:5000` to view the app**
