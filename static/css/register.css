@@ -146,7 +146,7 @@ body{
 }
 
 /* Error message */
-.error {
+.card .error {
     color: red;
     font-size: .8rem;
     margin: 0 0 0 1rem;
