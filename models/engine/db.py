@@ -15,39 +15,41 @@ from os import getenv
 
 
 class DB:
-    """DB class
-    """
-    def __init__(self) -> None:
-        """Initialize a new DB instance
-        """
-        HBNB_ENV = getenv('HBNB_ENV', None)
-        user = 'root'
-        password = 'root'
-        host = 'localhost'
-        database = 'product'
+    """DB class"""
 
-        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".format(
-            user, password, host, database
-        ), echo=False)
+    def __init__(self) -> None:
+        """Initialize a new DB instance"""
+        env = getenv("NOTE_ENV", None)
+        user = getenv("NOTE_USER", None)
+        password = getenv("NOTE_PASSWD", None)
+        host = getenv("NOTE_HOST", None)
+        database = getenv("NOTE_DB", None)
+
+        self.__engine = create_engine(
+            "mysql+mysqldb://{}:{}@{}/{}".format(
+                user, password, host, database
+            ),
+            echo=False,
+        )
         self.__session = None
 
-        if HBNB_ENV == "test":
+        if env == "test":
             Base.metadata.drop_all(self.__engine)
 
     @property
     def _session(self) -> Session:
-        """Memoized session object
-        """
+        """Memoized session object"""
         if self.__session is None:
             Base.metadata.create_all(self.__engine)
-            sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+            sess_factory = sessionmaker(
+                bind=self.__engine, expire_on_commit=False
+            )
             Session = scoped_session(sess_factory)
             self.__session = Session
         return self.__session
 
     def save(self) -> None:
-        """Save the current session
-        """
+        """Save the current session"""
         try:
             self._session.commit()
         except Exception as e:
@@ -55,13 +57,11 @@ class DB:
             raise e
 
     def add(self, obj) -> None:
-        """Add an object to the current session
-        """
+        """Add an object to the current session"""
         self._session.add(obj)
 
     def find_obj_by(self, cls, **kwargs) -> object:
-        """Find an object by a given key/value pair
-        """
+        """Find an object by a given key/value pair"""
         if cls and kwargs:
             if type(cls) is str:
                 cls = eval(cls)
@@ -75,8 +75,7 @@ class DB:
         raise InvalidRequestError
 
     def find_obj_all_by(self, cls, **kwargs) -> object:
-        """Find an object by a given key/value pair
-        """
+        """Find an object by a given key/value pair"""
         if cls and kwargs:
             if type(cls) is str:
                 cls = eval(cls)
@@ -90,19 +89,16 @@ class DB:
         raise InvalidRequestError
 
     def reload(self) -> None:
-        """Reload the current session
-        """
+        """Reload the current session"""
         Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session()
 
     def delete(self, obj) -> None:
-        """Delete an object from the current session
-        """
+        """Delete an object from the current session"""
         self._session.delete(obj)
 
     def close(self) -> None:
-        """Close the current session
-        """
+        """Close the current session"""
         self._session.close()

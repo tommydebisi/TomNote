@@ -24,7 +24,7 @@
                     {{ user.email }}
                 </li>
                 <li>
-                    <a href="{{ url_for('logout') }}">
+                    <a href="{{ url_for('app_notes.logout') }}">
                         Logout
                     </a>
                 </li>
@@ -53,7 +53,7 @@
                 <div class="note-add">
                     <h3>Add Note</h3>
                 </div>
-                <form action="{{ url_for('home') }}" method="post">
+                <form action="{{ url_for('app_notes.home') }}" method="post">
                     <div class="inner-form">
                         <label for="title">Title:</label>
                         {% if update %}
@@ -84,10 +84,10 @@
                             <small class="margin-bot">{{ note.updated_at }}</small>
                         </div>
                         <div class="delete">
-                            <a href="{{ url_for('delete', note_id=note.id) }}">
+                            <a href="{{ url_for('app_notes.delete', note_id=note.id) }}">
                                 <i class="fa-regular fa-trash-can"></i>
                             </a>
-                            <a href="{{ url_for('update', note_id=note.id) }}">
+                            <a href="{{ url_for('app_notes.update', note_id=note.id) }}">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                         </div>
