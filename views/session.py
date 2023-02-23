@@ -3,7 +3,7 @@
 from flask import render_template, request, session, redirect, url_for
 from sqlalchemy.exc import InvalidRequestError
 from views import app_notes
-from app import AUTH
+from auth.auth import AUTH
 
 
 @app_notes.route("/", methods=["GET"], strict_slashes=False)

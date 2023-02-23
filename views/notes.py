@@ -2,7 +2,7 @@
 
 from flask import render_template, request, session, redirect, url_for
 from views import app_notes
-from app import AUTH
+from auth.auth import AUTH
 
 
 @app_notes.route("/home", methods=["GET", "POST"], strict_slashes=False)

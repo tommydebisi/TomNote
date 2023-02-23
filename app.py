@@ -4,7 +4,7 @@
 """
 from flask import Flask
 from flask_cors import CORS
-from auth.auth import Auth
+# from auth.auth import Auth
 from views import app_notes
 import models
 
@@ -12,7 +12,7 @@ import models
 app = Flask(__name__, static_url_path="", static_folder="static")
 app.secret_key = "secret"
 CORS(app, resources={r"*": {"origins": "*"}})
-AUTH = Auth()
+# AUTH = Auth()
 app.register_blueprint(app_notes)
 
 

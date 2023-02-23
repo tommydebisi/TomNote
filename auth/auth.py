@@ -128,3 +128,5 @@ class Auth:
                 self._db.save()
         except (InvalidRequestError, NoResultFound):
             pass
+
+AUTH = Auth()
