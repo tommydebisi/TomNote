@@ -2,3 +2,4 @@ flask_cors
 flask
 sqlalchemy
 mysqlclient
+bcrypt
