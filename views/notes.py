@@ -10,12 +10,12 @@ def home() -> str:
     """home page"""
     if request.method == "GET":
         if session.get("email") is None:
-            return redirect("/")
+            return redirect("/note")
         user = AUTH.get_user_from_email(session["email"])
         return render_template("home.html", user=user, notes=user.notes)
     if request.method == "POST":
         if "email" not in session:
-            return redirect("/")
+            return redirect("/note")
 
         user = AUTH.get_user_from_email(session["email"])
         title = request.form.get("title")
@@ -34,7 +34,7 @@ def home() -> str:
 def delete(note_id) -> str:
     """delete note"""
     if "email" not in session:
-        return redirect("/")
+        return redirect("/note")
 
     user = AUTH.get_user_from_email(session["email"])
 
@@ -47,7 +47,7 @@ def delete(note_id) -> str:
 def update(note_id) -> str:
     """update note"""
     if "email" not in session:
-        return redirect("/")
+        return redirect("/note")
 
     user = AUTH.get_user_from_email(session["email"])
 

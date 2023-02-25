@@ -20,7 +20,7 @@ def login() -> str:
 
     if AUTH.valid_login(email, password):
         session["email"] = email
-        return redirect("/home")
+        return redirect('/note/home')
 
     return render_template("login.html", error="Invalid username or password")
 
@@ -38,7 +38,7 @@ def logout():
     print(email)
     if email:
         session["email"] = None
-    return redirect("/")
+    return redirect("/note")
 
 
 @app_notes.route("/register", methods=["POST"], strict_slashes=False)
