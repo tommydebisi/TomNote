@@ -33,3 +33,5 @@ note**
 - **set environment variables `NOTE_USER`, `NOTE_PASSWORD`, `NOTE_HOST` and `NOTE_DB` to the `username`, `password`, `host` and `database name` respectively**
 - **run the app.py file**
 - **open the browser and go to `127.0.0.1:5000` to view the app**
+<br><br>
+**Note: The app is hosted and can be found [HERE](http://tommyade.tech/note)**
