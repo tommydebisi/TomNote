@@ -32,4 +32,4 @@ note**
 - **run the app.py file**
 - **open the browser and go to `127.0.0.1:5000` to view the app**
 <br><br>
-**Note: The app is hosted and can be found [HERE](http://tommyade.tech/note)**
+**Note: The app is hosted and can be found [HERE](http://bit.ly/3T4AdHf)**
