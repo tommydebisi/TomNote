@@ -1,5 +1,3 @@
-## Start of the backend task for Uptick talent
-
 ## Description
 **Creation of a Note taking App that a User can create, read, edit and delete notes**
 
